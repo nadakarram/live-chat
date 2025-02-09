@@ -25,7 +25,7 @@
             
             <div class="row">
                 <div class="col-md-6">
-                    <p><strong>Profile:</strong> Created on: <?php
+                    <p><strong>Created on:</strong>  <?php
                         $dateString = $userdata->created_at;
 
                         // Create a DateTime object from the string
@@ -36,10 +36,10 @@
 
                         echo $formattedDate;
                      ?></p>
-                    {{-- <p><strong>Phone:</strong> {{$userdata->phone_number}}</p> --}}
+                    <p><strong>username:</strong> {{$userdata->username}}</p>
                 </div>
                 <div class="col-md-6">
-                    {{-- <p><strong>Address:</strong>  {{$userdata->address}}</p> --}}
+                    <p><strong>Email:</strong>  {{$userdata->email}}</p>
                 </div>
             </div>
         </div>

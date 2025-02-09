@@ -29,7 +29,13 @@
               @foreach ($users as $user)
               @if ($user->id==$privatechat1->user2_id)
               <a href="privatechating/{{$user->id}}"  class="cursor-pointer mt-3 border-0 list-group-item list-group-item-action d-flex align-items-center" style="background-color:{{$color}}">
-                <img src="{{ asset('storage/'.$user->image) }}" class="rounded-circle me-3" width="40" alt="Room Image">
+                @if ($user->image==null)
+                <div class="bg-secondary text-white rounded-circle d-flex me-3 justify-content-center align-items-center"
+                style="width: 40px;height: 40px;"> <i class="fas fa-user"></i></div>
+                @else
+                    <img src="{{ asset('storage/'.$user->image) }}" class="rounded-circle me-3" width="40" alt="Room Image">
+                @endif
+              
                 <div>
                     <strong class="fs-6">{{ $user->username }}</strong>
                    
@@ -77,7 +83,7 @@
           <!-- Chat Messages Section -->
       
           <div class="col-md-9 d-flex flex-column " >
-        {{$page}}
+        
       @livewire($page,["data",$data])
       </div>
       {{-- <div class="col-md-9 d-flex flex-column" style="height: 100vh;">

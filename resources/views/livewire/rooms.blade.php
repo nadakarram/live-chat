@@ -89,7 +89,7 @@
         @foreach ($rooms as $room)
         <div class="col-md-4 mb-3 ">
             <div class="card shadow-sm position-relative">
-              <img src="{{asset("storage/".$room->image)}}"  class="card-img-top "  alt="Group Image" style="height:120px">
+              <img src="{{asset("storage/".$room->image)}}"  class="card-img-top "  alt="Group Image" style="height:120px;object-fit:cover;">
               <div class="card-body text-center">
                 <div style="top: 25%; left: 43%;" class="d-flex position-absolute  justify-content-center align-items-center mb-2">
                   <div class="rounded-circle bg-success text-white p-2">
@@ -123,10 +123,16 @@
                     {{$member_number}} Members</span>
                   {{-- <span>20 Posts per day</span> --}}
                 </div>
-                <div class="mt-3">
-                  <img src="https://via.placeholder.com/30" class="rounded-circle me-1" alt="User 1">
-                  <img src="https://via.placeholder.com/30" class="rounded-circle me-1" alt="User 2">
-                  <img src="https://via.placeholder.com/30" class="rounded-circle me-1" alt="User 3">
+                <div class="mt-3 d-flex align-items-center">
+                  
+                  <div class="bg-secondary text-white rounded-circle d-flex me-3 justify-content-center align-items-center"
+                  style="width: 40px;height: 40px;"> <i class="fas fa-user"></i></div>
+                
+                  <div class="bg-secondary text-white rounded-circle d-flex me-3 justify-content-center align-items-center"
+                  style="width: 40px;height: 40px;"> <i class="fas fa-user"></i></div>
+                  <div class="bg-secondary text-white rounded-circle d-flex me-3 justify-content-center align-items-center"
+                  style="width: 40px;height: 40px;"> <i class="fas fa-user"></i></div>
+                
                   <span class="text-muted">+  {{$member_number}}</span>
                 </div>
                 {{-- dvider --}}
